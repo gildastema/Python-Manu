@@ -1,20 +1,19 @@
-mport json
+import json
 import os
 
 from flask import Flask
-from flask import request
+
 app = Flask(__name__)
 
-RESPONSE = os.environ["RESPONSE"]
 
 @app.route("/status")
 def root():
-    ret = {
-        'response': RESPONSE
-        }
+    response = {
+        'result' : "success"
+    }
+    return json.dumps(response)
 
-   return json.dumps(ret)
 
- if __name__ == "__main__":
-                app.run()
-                
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
