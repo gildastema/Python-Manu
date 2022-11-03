@@ -25,10 +25,10 @@ Regardless of the provider that you choose, we should be able to deploy the infr
 ### Stretch Goals
 Feel free to do one or all of the below optional goals - show us where you shine!
 
-- Build and push container image via CI
+- Build and push container image via CI  ( Github Action , Public Repo)
  - You can use either GitHub actions or Travis
  - Use any container repository that you like, public or private
- - Write tests for the your code and run them via CI
+ - Write tests for the your code and run them via CI ( GitHub Action)
   - You can use GitHub actions or Travis
  - Tests should run automatically when a pull request is created against the main branch
  - Grant `Yannick'` write access to the repository to test
