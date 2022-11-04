@@ -1,0 +1,5 @@
+kubernates/
+.venv/
+.env/
+.pytest_cache/
+.github/
