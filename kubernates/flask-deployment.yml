@@ -1,32 +1,23 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: flask-demo
   labels:
-    name: flask
-  name: flask
+    app: flask-demo-deploy
 spec:
-  progressDeadlineSeconds: 2147483647
   replicas: 1
   selector:
     matchLabels:
-      app: flask
+      app: flask-demo
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        app: flask
+        app: flask-demo
     spec:
       containers:
-      - env:
-        image: gildastema/flask-demo:latest
-        imagePullPolicy: Always
-        name: flask
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+        - name: flask-demo
+          image: gildastema/flask-demo:latest
+          ports:
+            - containerPort: 5000
+
