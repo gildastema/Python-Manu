@@ -19,10 +19,17 @@ Use any container repository that you like, public or private (x)
 Write tests for the your code and run them via CI ( GitHub Action) ( X)
 You can use GitHub actions or Travis (x)
 Tests should run automatically when a pull request is created against the main branch (x)
-Grant Yannick' write access to the repository to test
-Write Kubernetes manifests or Helm charts to deploy the container into a Kubernetes cluster (o)
-You do not need to provide Terraform code for provisioning the cluster, you can assume an existing cluster
-The application should be exposed as a service such that it can be accessed from a browser (local IP is fine)
+Grant Yannick' write access to the repository to test --- to you 
+Write Kubernetes manifests or Helm charts to deploy the container into a Kubernetes cluster (x)
+You do not need to provide Terraform code for provisioning the cluster, you can assume an existing cluster -- need help
+The application should be exposed as a service such that it can be accessed from a browser (local IP is fine) (x)
 Create a /ip endpoint that returns the city and state of the IP requesting the page (x)
 You are free to use any third party software/services to convert the IP to location data (x)
 The response should be returned as a json result matching the following model: (x)
+
+
+
+## Order for Kubernate Deployment 
+
+    kubectl create -f kubernates/flask-deployment.yml
+    kubectl create -f kubernates/flask-service.yml
