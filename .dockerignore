@@ -3,3 +3,6 @@ kubernates/
 .env/
 .pytest_cache/
 .github/
+README.md
+__pycache__/
+test_main.py
