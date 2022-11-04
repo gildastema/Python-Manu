@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: flask-demo
-          image: gildastema/flask-demo:latest
+          image: yannick/flask-demo:latest
           ports:
             - containerPort: 5000
 

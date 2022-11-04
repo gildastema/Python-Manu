@@ -1,6 +1,10 @@
+
+
 name: CI
 
 on:
+  push:
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
@@ -40,5 +44,5 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: flask-demo:latest        
+        tags: yannick/flask-demo:latest        
 
