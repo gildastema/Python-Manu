@@ -42,5 +42,5 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: gildastema/flask-demo-2:latest        
+        tags: gildastema/flask-demo-3:latest        
 
