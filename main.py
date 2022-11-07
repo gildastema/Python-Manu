@@ -1,5 +1,6 @@
 import os
 import requests
+from flask import request
 
 from flask import Flask
 
@@ -19,7 +20,7 @@ def status():
 
 @app.route("/ip")
 def get_location():
-    ip_address = get_ip()
+    ip_address = request.remote_addr
     response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
     location_data = {
         "ip": ip_address,
@@ -30,9 +31,6 @@ def get_location():
 
 
 
-def get_ip():
-    response = requests.get('https://api64.ipify.org?format=json').json()
-    return response["ip"]
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))

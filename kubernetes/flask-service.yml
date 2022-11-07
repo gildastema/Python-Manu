@@ -8,7 +8,6 @@ spec:
   - port: 5000
     protocol: TCP
     targetPort: 5000
-    nodePort: 30500
   selector:
     app: flask-demo
-  type: NodePort
+  type: LoadBalancer
