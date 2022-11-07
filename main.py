@@ -22,13 +22,15 @@ def status():
 def get_location():
     ip_address = request.remote_addr
     response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
-    location_data = {
-        "ip": ip_address,
-        "city": response['city'],
-        "state": response["region"],
-    }
-    return location_data
-
+    if response['error'] :
+        return response
+    else :
+        location_data = {
+            "ip": ip_address,
+            "city": response['city'],
+            "state": response["region"],
+        }
+        return location_data
 
 
 
