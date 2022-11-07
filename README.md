@@ -6,11 +6,11 @@
     - There should be a publicly accessible `/status` endpoint that responds with `{"result": "success"}`
 
 
-#INFRASTRUCTURE 
+# INFRASTRUCTURE 
 
 - All infrastructure must be provisioned via Terraform
   - You are free to use any third party providers or libraries you wish
-#DEPLOYMENT
+# DEPLOYMENT
 
 **Note: You should not be creating any infrastructure/resources manually - aside from code that you write and the cloud account that you create, everything you make should be able to be created and destroyed through the Terraform files.**
 
@@ -22,7 +22,7 @@ You can deploy the infrastructure onto any cloud provider you like, most provide
 Regardless of the provider that you choose, we should be able to deploy the infrastructure into our own account simply by entering our own access keys as Terraform variables.
 
 
-### Stretch Goals
+# Stretch Goals
 Feel free to do one or all of the below optional goals - show us where you shine!
 
 - Build and push container image via CI  ( Github Action , Public Repo)
