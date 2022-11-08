@@ -1,7 +1,7 @@
 name: CI
 
 on:
-  push:
+  push: ## To remove for final version 
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3 ## Pull the source code 
+    - uses: actions/checkout@v3 ## Pull the source code  the container ci 
     - name: Set up Python 3.8
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v3 ## install and setUp Python
       with:
         python-version: "3.8"
     - name: Install dependencies
@@ -25,11 +25,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Test with pytest
+    - name: Test with pytest ## Run test
       run: |
         pytest .
         
-    - name : Set Up QMENU
+    - name : Set Up QMENU to connect to docker 
       uses: docker/setup-qemu-action@v2
     - name: Set Up Docker Build Image
       uses: docker/setup-buildx-action@v2
@@ -42,5 +42,5 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: gildastema/flask-demo:0.1     
+        tags: gildastema/flask-demo:0.1 
 
